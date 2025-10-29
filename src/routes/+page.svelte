@@ -1,0 +1,311 @@
+<script lang="ts">
+	import { PRODUCT_CATEGORIES, getProductsByCategory } from '$lib/config/navigation';
+</script>
+
+<svelte:head>
+	<title>Apple Tech Store - Premium Technology in Your City</title>
+	<meta name="description" content="Your local destination for Apple products. Experience innovation with MacBook, iPhone, Vision Pro and more." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
+
+<main class="relative z-[2] overflow-x-hidden bg-white">
+	<!-- Hero Section -->
+	<section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(74,158,255,0.1),transparent_50%)]"></div>
+		
+		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
+			<div class="space-y-8 sm:space-y-12">
+				<div class="space-y-4 sm:space-y-6">
+					<h1 
+						class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 700; letter-spacing: -0.03em; text-shadow: 0 0 80px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.8), 0 2px 20px rgba(0, 0, 0, 0.15), 0 4px 40px rgba(0, 0, 0, 0.1);"
+					>
+						Apple Tech
+					</h1>
+					<p 
+						class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; color: #424245; font-weight: 300; letter-spacing: -0.01em; text-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 2px 15px rgba(0, 0, 0, 0.1), 0 4px 30px rgba(0, 0, 0, 0.08);"
+					>
+						Premium technology.<br class="sm:hidden" /> Delivered locally.
+					</p>
+				</div>
+				
+				<p 
+					class="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400; text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 1px 8px rgba(0, 0, 0, 0.1);"
+				>
+					Your trusted destination for the latest Apple products.<br />
+					Experience innovation, quality, and exceptional service.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+					<a 
+						href="#explore" 
+						class="px-8 py-4 text-white rounded-full text-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+						style="background-color: #0066cc; font-weight: 500;"
+					>
+						Explore Products
+					</a>
+					<a 
+						href="/contact" 
+						class="px-8 py-4 border-2 rounded-full text-lg font-medium hover:border-gray-900 transition-colors"
+						style="border-color: #86868b; color: #1d1d1f; font-weight: 500;"
+					>
+						Visit Our Store
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us Section -->
+	<section class="py-20 sm:py-32 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 sm:mb-24">
+				<h2 
+					class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600; letter-spacing: -0.02em; text-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.7), 0 2px 15px rgba(0, 0, 0, 0.12);"
+				>
+					Why Choose Us
+				</h2>
+				<p 
+					class="text-xl sm:text-2xl text-gray-600 font-light"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400; text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 1px 8px rgba(0, 0, 0, 0.1);"
+				>
+					More than just a store
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+				<div class="text-center space-y-4">
+					<div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+						<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+						</svg>
+					</div>
+					<h3 
+						class="text-2xl font-semibold"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600;"
+					>
+						Authentic Products
+					</h3>
+					<p 
+						class="text-gray-600 leading-relaxed"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+					>
+						100% genuine Apple products with official warranty and support.
+					</p>
+				</div>
+				
+				<div class="text-center space-y-4">
+					<div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+						<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 
+						class="text-2xl font-semibold"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600;"
+					>
+						Local Service
+					</h3>
+					<p 
+						class="text-gray-600 leading-relaxed"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+					>
+						Fast delivery and personalized support right in your city.
+					</p>
+				</div>
+				
+				<div class="text-center space-y-4">
+					<div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center">
+						<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+						</svg>
+					</div>
+					<h3 
+						class="text-2xl font-semibold"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600;"
+					>
+						Expert Advice
+					</h3>
+					<p 
+						class="text-gray-600 leading-relaxed"
+						style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+					>
+						Knowledgeable team ready to help you find the perfect device.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Categories Preview -->
+	<section class="py-20 sm:py-32 bg-gray-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 sm:mb-24">
+				<h2 
+					class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600; letter-spacing: -0.02em; text-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.7), 0 2px 15px rgba(0, 0, 0, 0.12);"
+				>
+					Our Collection
+				</h2>
+				<p 
+					class="text-xl sm:text-2xl text-gray-600 font-light"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400; text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 1px 8px rgba(0, 0, 0, 0.1);"
+				>
+					Explore by category
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+				{#each PRODUCT_CATEGORIES as category}
+					<a 
+						href="#{category.id}"
+						class="group bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+					>
+						<div class="space-y-4">
+							<div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+								{#if category.id === 'laptop'}💻
+								{:else if category.id === 'smartphone'}📱
+								{:else if category.id === 'vr'}🥽
+								{:else if category.id === 'desktop'}🖥️
+								{/if}
+							</div>
+							<div>
+								<h3 
+									class="text-2xl font-semibold mb-2"
+									style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600;"
+								>
+									{category.name}
+								</h3>
+								<p 
+									class="text-gray-600 text-sm"
+									style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+								>
+									{category.description}
+								</p>
+							</div>
+						</div>
+					</a>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<!-- Products Section -->
+	<section id="explore" class="py-20 sm:py-32 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16 sm:mb-24">
+				<h2 
+					class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600; letter-spacing: -0.02em; text-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.7), 0 2px 15px rgba(0, 0, 0, 0.12);"
+				>
+					Featured Products
+				</h2>
+				<p 
+					class="text-xl sm:text-2xl text-gray-600 font-light"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400; text-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 1px 8px rgba(0, 0, 0, 0.1);"
+				>
+					Discover the latest innovations
+				</p>
+			</div>
+			
+			{#each PRODUCT_CATEGORIES as category}
+				{@const products = getProductsByCategory(category.name)}
+				{#if products.length > 0}
+					<div id={category.id} class="mb-20 scroll-mt-20">
+						<div class="mb-8">
+							<h3 
+								class="text-3xl sm:text-4xl font-semibold mb-2"
+								style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600; letter-spacing: -0.01em;"
+							>
+								{category.name}
+							</h3>
+							<p 
+								class="text-lg text-gray-600"
+								style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+							>
+								{category.description}
+							</p>
+						</div>
+						
+						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+							{#each products as product}
+								<a
+									href={product.href}
+									class="group block bg-gray-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+								>
+									<div class="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
+										<div class="text-7xl sm:text-8xl transform group-hover:scale-110 transition-transform duration-300">
+											{product.icon || '📦'}
+										</div>
+										<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+									</div>
+									<div class="p-6 sm:p-8 space-y-3">
+										<h4 
+											class="text-2xl font-semibold group-hover:text-blue-600 transition-colors"
+											style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600;"
+										>
+											{product.label}
+										</h4>
+										{#if product.description}
+											<p 
+												class="text-gray-600 leading-relaxed"
+												style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400;"
+											>
+												{product.description}
+											</p>
+										{/if}
+										<div class="flex items-center font-medium pt-2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; color: #0066cc; font-weight: 500;">
+											Learn more
+											<svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+											</svg>
+										</div>
+									</div>
+								</a>
+							{/each}
+						</div>
+					</div>
+				{/if}
+			{/each}
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-20 sm:py-32 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 
+				class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6"
+				style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 600; letter-spacing: -0.02em; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 0 4px 40px rgba(0, 0, 0, 0.2);"
+			>
+				Ready to upgrade?
+			</h2>
+			<p 
+				class="text-xl sm:text-2xl font-light mb-12 text-blue-100"
+				style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; font-weight: 400; text-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);"
+			>
+				Visit our store or get in touch to find your perfect Apple device.
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a 
+					href="/contact" 
+					class="px-8 py-4 bg-white rounded-full text-lg font-medium hover:bg-gray-100 transition-colors shadow-lg"
+					style="color: #0066cc; font-weight: 500;"
+				>
+					Contact Us
+				</a>
+				<a 
+					href="/shop" 
+					class="px-8 py-4 border-2 border-white text-white rounded-full text-lg font-medium hover:bg-white/10 transition-colors"
+					style="font-weight: 500;"
+				>
+					Browse All Products
+				</a>
+			</div>
+		</div>
+	</section>
+</main>
+

@@ -1,0 +1,52 @@
+@use "tailwindcss";
+
+:global(html) {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+:global(body) {
+	/* Apple-style font stack - Inter for web, SF Pro on Apple devices */
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: hsl(0, 0%, 100%);
+	color: #1d1d1f; /* Apple's dark gray */
+	min-height: 100vh;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'kern' 1;
+	font-kerning: normal;
+	font-weight: 400;
+}
+
+/* Enhanced text readability on light backgrounds */
+:global(h1, h2, h3, h4, h5, h6) {
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	color: #1d1d1f;
+}
+
+:global(p) {
+	font-weight: 400;
+	line-height: 1.6;
+	color: #1d1d1f;
+}
+
+/* Text shadows for better readability over images/gradients */
+:global(.text-enhanced) {
+	text-shadow: 
+		0 1px 2px rgba(0, 0, 0, 0.1),
+		0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+:global(.text-enhanced-strong) {
+	text-shadow: 
+		0 2px 4px rgba(0, 0, 0, 0.15),
+		0 4px 8px rgba(0, 0, 0, 0.1),
+		0 0 40px rgba(255, 255, 255, 0.5);
+	color: #1d1d1f;
+}
