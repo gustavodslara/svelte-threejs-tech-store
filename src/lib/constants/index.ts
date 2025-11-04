@@ -28,7 +28,7 @@ export const SCENE_3D = {
 		POSITION: { x: 0, y: 0, z: 5 }
 	},
 	MODEL_GROUP: {
-		POSITION: { x: 0, y: -0.7, z: 0 },
+		POSITION: { x: 0, y: -1.2, z: 0 },
 		ROTATION: { x: Math.PI / 2, y: 0, z: 0 },
 		SCALE: 1.3
 	},
@@ -59,9 +59,10 @@ export const SCENE_3D = {
 export const Z_INDEX = {
 	CANVAS: 1,
 	CONTENT: 2,
-	NAVBAR: 100,
-	MOBILE_OVERLAY: 150,
-	MOBILE_MENU: 200,
+	NAVBAR: 1000,
+	DROPDOWN: 1100,
+	MOBILE_OVERLAY: 1150,
+	MOBILE_MENU: 1200,
 	LOADING_SCREEN: 9998,
 	LOADING_OVERLAY: 9999
 } as const;

@@ -27,7 +27,7 @@
 </script>
 
 {#if fullscreen}
-	<div class="fixed inset-0 bg-white z-[{Z_INDEX.LOADING_SCREEN}] flex flex-col items-center justify-center">
+	<div class="fixed inset-0 bg-white flex flex-col items-center justify-center" style="z-index: {Z_INDEX.LOADING_SCREEN};">
 		<div class={spinnerClass} role="status" aria-label="Loading"></div>
 		{#if text}
 			<p class="mt-4 text-lg" style="color: #1d1d1f; font-weight: 400;">{text}</p>

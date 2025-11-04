@@ -7,7 +7,8 @@
 	let showMobileMenu = $state(false);
 	let dropdownElement = $state<HTMLDivElement>();
 
-	function toggleProductsDropdown() {
+	function toggleProductsDropdown(event: MouseEvent) {
+		event.stopPropagation();
 		showProductsDropdown = !showProductsDropdown;
 	}
 
@@ -52,7 +53,7 @@
 	});
 </script>
 
-<nav class="sticky top-0 z-[{Z_INDEX.NAVBAR}] bg-white/85 backdrop-blur-xl shadow-sm border-b border-gray-100">
+<nav class="sticky top-0 bg-white/85 backdrop-blur-xl shadow-sm border-b border-gray-100" style="z-index: {Z_INDEX.NAVBAR};">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center py-3">
 			<!-- Logo -->
@@ -88,7 +89,7 @@
 					</button>
 
 					{#if showProductsDropdown}
-						<div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 py-3 z-50">
+						<div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 py-3" style="z-index: {Z_INDEX.DROPDOWN};">
 							{#each PRODUCT_CATEGORIES as category}
 								{@const products = getProductsByCategory(category.name)}
 								{#if products.length > 0}
@@ -163,7 +164,8 @@
 {#if showMobileMenu}
 	<!-- Overlay -->
 	<button
-		class="fixed inset-0 bg-black/50 z-[{Z_INDEX.MOBILE_OVERLAY}] md:hidden cursor-default"
+		class="fixed inset-0 bg-black/50 md:hidden cursor-default"
+		style="z-index: {Z_INDEX.MOBILE_OVERLAY};"
 		onclick={closeMobileMenu}
 		onkeydown={handleOverlayKeydown}
 		aria-label="Close menu overlay"
@@ -172,7 +174,8 @@
 
 	<!-- Side Menu -->
 	<div 
-		class="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white z-[{Z_INDEX.MOBILE_MENU}] md:hidden overflow-y-auto"
+		class="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white md:hidden overflow-y-auto"
+		style="z-index: {Z_INDEX.MOBILE_MENU};"
 		transition:fly={{ x: 300, duration: ANIMATION.SLIDE_DURATION }}
 	>
 		<!-- Menu Header -->

@@ -22,10 +22,10 @@
 		class:ml-auto={align === 'right'}
 		class:mx-auto={align === 'center'}
 	>
-		<!-- White gradient background - fades to transparent -->
+		<!-- Circular blur backdrop behind text -->
 		<div 
 			class="absolute inset-0 -inset-x-28 -inset-y-40 sm:-inset-x-36 sm:-inset-y-48 md:-inset-x-44 md:-inset-y-56 lg:-inset-x-52 lg:-inset-y-64 z-[-1] pointer-events-none overflow-hidden"
-			style="{backdropStyle};"
+			style="{backdropStyle}; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
 		></div>
 		
 		<div class="relative z-1 space-y-4 sm:space-y-6">
@@ -54,13 +54,13 @@
 			<div>
 				<h2 
 					class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-3 sm:mb-4 tracking-tight" 
-					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; text-shadow: {TEXT_SHADOWS.heading}; color: #1d1d1f; font-weight: 600; letter-spacing: -0.02em;"
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif; color: #1d1d1f; font-weight: 600; letter-spacing: -0.02em;"
 				>
 					{title}
 				</h2>
 				<p 
-					class="text-xl sm:text-2xl md:text-3xl font-normal text-gray-700" 
-					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; text-shadow: {TEXT_SHADOWS.subtitle}; font-weight: 400;"
+					class="text-xl sm:text-2xl md:text-3xl font-normal" 
+					style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif; color: #424245; font-weight: 400;"
 				>
 					{description}
 				</p>

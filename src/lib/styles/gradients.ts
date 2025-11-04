@@ -42,33 +42,13 @@ export const GRADIENTS = {
 } as const;
 
 /**
- * Text shadow utilities for enhanced readability
- * Multi-layered shadows for better contrast over any background
+ * Text shadow utilities - none needed, using backdrop blur instead
  */
 export const TEXT_SHADOWS = {
-	// For large hero titles
-	title: `
-		0 2px 8px rgba(255, 255, 255, 0.95),
-		0 4px 16px rgba(255, 255, 255, 0.8),
-		0 1px 2px rgba(0, 0, 0, 0.08),
-		0 0 60px rgba(255, 255, 255, 0.4)
-	`,
-	// For section headings
-	heading: `
-		0 2px 6px rgba(255, 255, 255, 0.9),
-		0 3px 12px rgba(255, 255, 255, 0.7),
-		0 1px 2px rgba(0, 0, 0, 0.06)
-	`,
-	// For subtitles and descriptions
-	subtitle: `
-		0 1px 4px rgba(255, 255, 255, 0.85),
-		0 2px 8px rgba(255, 255, 255, 0.6),
-		0 1px 1px rgba(0, 0, 0, 0.05)
-	`,
-	// For body text
-	body: `
-		0 1px 3px rgba(255, 255, 255, 0.7),
-		0 1px 6px rgba(255, 255, 255, 0.5)
-	`
+	// No shadows - plain text
+	title: 'none',
+	heading: 'none',
+	subtitle: 'none',
+	body: 'none'
 } as const;
 
