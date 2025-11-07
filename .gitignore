@@ -13,6 +13,9 @@
 /build
 /package
 
+# Keep docs folder for GitHub Pages (don't ignore it)
+# /docs
+
 # Environment variables
 .env
 .env.*

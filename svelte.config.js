@@ -6,17 +6,17 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: undefined,
+			pages: 'docs',
+			assets: 'docs',
+			fallback: 'index.html',
 			precompress: false,
-			strict: true
+			strict: false
 		}),
 		alias: {
 			$lib: 'src/lib'
 		},
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/react-threejs-scrolling-animation' : ''
+			base: process.env.NODE_ENV === 'production' ? '/svelte-threejs-tech-store' : ''
 		}
 	}
 };

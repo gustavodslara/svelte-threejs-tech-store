@@ -1,0 +1,1 @@
+import{t as k,v as S,k as h,w as T,S as c}from"./BRxA3ME8.js";function t(r,i){return r===i||(r==null?void 0:r[c])===i}function x(r={},i,a,q){return k(()=>{var f,s;return S(()=>{f=s,s=[],h(()=>{r!==a(...s)&&(i(r,...s),f&&t(a(...f),r)&&i(null,...f))})}),()=>{T(()=>{s&&t(a(...s),r)&&i(null,...s)})}}),r}export{x as b};
