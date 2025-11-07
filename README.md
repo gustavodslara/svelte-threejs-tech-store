@@ -289,25 +289,25 @@ export function isValidCategory(category: string): category is ProductLink['cate
 ### Prerequisites
 
 - **Node.js** 18.x or higher
-- **pnpm** 8.x or higher (recommended)
+- **npm** 9.x or higher (comes with Node.js)
 
 ### Getting Started
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Start dev server
-pnpm dev
+npm run dev
 
-# Build for production
-pnpm build
+# Build for production (outputs to docs/)
+npm run build
 
 # Preview production build
-pnpm preview
+npm run preview
 
 # Type checking
-pnpm check
+npm run check
 ```
 
 ### Development Server
@@ -320,29 +320,48 @@ Local: http://localhost:5173
 
 ## 📦 Build & Deployment
 
-### Static Site Generation
+### Static Site Generation (SSG)
+
+This project is configured for **static site generation** and deployed to **GitHub Pages**.
 
 ```bash
 # Build static site
-pnpm build
+npm run build
 
 # Output directory
-build/
+docs/
 ```
 
-### Environment Variables
+### GitHub Pages Configuration
 
-```env
-NODE_ENV=production
+- **Output folder**: `docs/`
+- **Base path**: `/svelte-threejs-tech-store`
+- **Adapter**: `@sveltejs/adapter-static`
+- **Deployment**: Automatic via GitHub Pages
+
+### Build Configuration
+
+```javascript
+// svelte.config.js
+adapter: adapter({
+  pages: 'docs',
+  assets: 'docs',
+  fallback: 'index.html',  // SPA fallback
+  precompress: false,
+  strict: false
+})
 ```
 
-### Deployment Targets
+### Live Site
 
-- ✅ Vercel
-- ✅ Netlify
-- ✅ GitHub Pages
-- ✅ Cloudflare Pages
-- ✅ Any static host
+🌐 **[View Live Demo](https://gustavodslara.github.io/svelte-threejs-tech-store/)**
+
+### Deployment Steps
+
+1. Build the project: `npm run build`
+2. Commit the `docs` folder: `git add docs && git commit -m "Build"`
+3. Push to GitHub: `git push`
+4. GitHub Pages will automatically deploy from the `docs` folder
 
 ---
 
